@@ -26,7 +26,6 @@ const ICON_COLOR = "442D1C";
 const SKILLS = [
   { name: 'React Native', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/react-native.png` },
   { name: 'UI/UX Design', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/design.png` },
-  { name: 'Game Dev', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/controller.png` },
   { name: 'Python', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/python.png` },
   { name: 'C#', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/c-sharp-logo.png` },
   { name: 'React JS', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/react-native.png` },
@@ -34,13 +33,12 @@ const SKILLS = [
   { name: 'CSS 3', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/css3.png` },
   { name: 'Figma', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/figma.png` },
   { name: 'Git', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/git.png` },
-  { name: 'VS Code', iconUrl: `https://img.icons8.com/ios-filled/${ICON_SIZE}/${ICON_COLOR}/visual-studio-code-2019.png` },
 ];
 
 const CONTACTS = [
   { type: 'Email', value: 'sayowariellya@gmail.com', icon: 'mail', action: 'mailto:sayowariellya@gmail.com' },
   { type: 'GitHub', value: 'ariellyasayow', icon: 'logo-github', action: 'https://github.com/ariellyasayow' },
-  { type: 'LinkedIn', value: 'Connect LinkedIn', icon: 'logo-linkedin', action: 'https://linkedin.com' },
+  { type: 'LinkedIn', value: 'Connect LinkedIn', icon: 'logo-linkedin', action: 'http://linkedin.com/in/ariellya-putri-sayow-3112923ab' },
   { type: 'Kampus', value: 'Student Email', icon: 'school', action: 'mailto:s22310359@student.unklab.ac.id' },
 ];
 
@@ -126,22 +124,27 @@ export default function MyProfile() {
         contentContainerStyle={styles.scrollContent}
       >
         
-        {/* 1. HEADER PROFILE (Index 0) */}
-        <Animated.View style={[styles.headerContent, getEnterStyle(0)]}>
-            <View style={styles.imageWrapper}>
-                <Image 
-                    source={{ uri: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80' }} 
-                    style={styles.profileImage} 
-                />
-            </View>
-            <Text style={styles.nameText}>Ariellya Putri Sayow</Text>
-            <Text style={styles.roleText}>Informatics Student (Sem 6)</Text>
-            
-            <View style={styles.locationContainer}>
-                <Ionicons name="location-sharp" size={14} color={COLORS.headerBg} />
-                <Text style={styles.locationText}>Manado, Indonesia</Text>
-            </View>
-        </Animated.View>
+      {/* 1. HEADER PROFILE (Index 0) */}
+      <Animated.View style={[styles.headerContent, getEnterStyle(0)]}>
+          
+          {/* INI BAGIAN YANG ERROR TADI */}
+          <View style={styles.imageWrapper}>
+              <Image 
+                source={require('../../assets/images/profile.jpeg')} 
+                style={styles.profileImage} 
+              />
+          </View> 
+          {/* ^^^ JANGAN LUPA INI! (Penutup imageWrapper) */}
+
+          <Text style={styles.nameText}>Ariellya Putri Sayow</Text>
+          <Text style={styles.roleText}>Informatics Student</Text>
+
+          <View style={styles.locationContainer}>
+            <Ionicons name="location" size={14} color="#E8D1A7" />
+            <Text style={styles.locationText}>Minahasa Utara, ID</Text>
+          </View>
+
+      </Animated.View>
 
         {/* WHITE SHEET CONTENT */}
         <View style={styles.whiteSheet}>
